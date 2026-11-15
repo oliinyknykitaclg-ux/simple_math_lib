@@ -6,7 +6,7 @@ namespace MathLib
 {
     bool isEqual(double a, double b, double tolerance)
     {
-        return abs(a - b) <= tolerance;
+        return std::abs(a - b) <= tolerance;
     }
 
     bool isPrime(int n)
@@ -44,3 +44,15 @@ namespace MathLib
 	}
 }
 
+
+namespace MathLib
+{
+    double thirdAngle(double angle1, double angle2)
+    {
+        if (angle1 <= 0 || angle2 <= 0 || angle1 + angle2 >= 180)
+        {
+            throw std::invalid_argument("Invalid triangle angles");
+        }
+        return 180.0 - angle1 - angle2;
+    }
+}
